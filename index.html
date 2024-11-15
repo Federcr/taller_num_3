@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Académica</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/ASSETS/img.logo.jpg" alt="Logo Académico" class="logo">
+            <h1>Sistema de Gestión Académica</h1>
+        </header>
+
+        <nav class="main-menu">
+            <button onclick="mostrarSeccion('estudiantes')" class="menu-btn">Gestión de Estudiantes</button>
+            <button onclick="mostrarSeccion('programas')" class="menu-btn">Gestión de Programas</button>
+            <button onclick="mostrarSeccion('matriculas')" class="menu-btn">Gestión de Matrículas</button>
+        </nav>
+
+        <section id="estudiantes" class="seccion">
+            <h2>Gestión de Estudiantes</h2>
+            <form id="estudianteForm">
+                <input type="text" id="estudianteId" placeholder="Identificación" required>
+                <input type="text" id="nombreEstudiante" placeholder="Nombre Completo" required>
+                <input type="date" id="fechaNacimiento" required>
+                <input type="email" id="correoEstudiante" placeholder="Correo Electrónico" required>
+                <input type="tel" id="telefonoEstudiante" placeholder="Teléfono (Opcional)">
+                <button type="submit">Guardar Estudiante</button>
+            </form>
+            <div id="listaEstudiantes"></div>
+        </section>
+
+        <section id="programas" class="seccion">
+            <h2>Gestión de Programas Académicos</h2>
+            <form id="programaForm">
+                <input type="text" id="codigoPrograma" placeholder="Código del Programa" required>
+                <input type="text" id="nombrePrograma" placeholder="Nombre del Programa" required>
+                <input type="number" id="duracionPrograma" placeholder="Duración (semestres)" required>
+                <select id="modalidadPrograma" required>
+                    <option value="">Seleccione Modalidad</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="virtual">Virtual</option>
+                    <option value="semipresencial">Semipresencial</option>
+                </select>
+                <input type="date" id="fechaInicio">
+                <button type="submit">Guardar Programa</button>
+            </form>
+            <div id="listaProgramas"></div>
+        </section>
+
+        <section id="matriculas" class="seccion">
+            <h2>Gestión de Matrículas</h2>
+            <form id="matriculaForm">
+                <input type="text" id="matriculaId" placeholder="ID de Matrícula" required>
+                <select id="estudianteMatricula" required>
+                    <option value="">Seleccione Estudiante</option>
+                </select>
+                <select id="programaMatricula" required>
+                    <option value="">Seleccione Programa</option>
+                </select>
+                <input type="date" id="fechaMatricula" required>
+                <select id="estadoMatricula" required>
+                    <option value="">Seleccione Estado</option>
+                    <option value="activa">Activa</option>
+                    <option value="en_proceso">En Proceso</option>
+                    <option value="finalizada">Finalizada</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
+                <button type="submit">Guardar Matrícula</button>
+            </form>
+            <div id="listaMatriculas"></div>
+        </section>
+
+        <section class="noticias-section">
+            <h2>Últimas Noticias</h2>
+        <div class="noticias-container">
+        <div class="noticia">
+            <img src="/ASSETS/img.lab.jpg" alt="Noticia 1" class="noticia-img">
+            <h3>Nuevos Laboratorios en CECAR</h3>
+            <p>La universidad inaugura nuevos espacios para prácticas estudiantiles.</p>
+            <span class="fecha">15 Nov 2024</span>
+        </div>
+        <div class="noticia">
+            <img src="/ASSETS/img.grado.jpg" alt="Noticia 2" class="noticia-img">
+            <h3>Grados 2024</h3>
+            <p>Más de 200 estudiantes reciben su título profesional este semestre.</p>
+            <span class="fecha">10 Nov 2024</span>
+        </div>
+        <div class="noticia">
+            <img src="/ASSETS/img.cecar.jpg" alt="Noticia 3" class="noticia-img">
+            <h3>Semana de la Investigación</h3>
+            <p>Estudiantes presentan sus proyectos de investigación.</p>
+            <span class="fecha">5 Nov 2024</span>
+        </div>
+    </div>
+</section>
+
+<section class="programas-section">
+    <h2>Nuestros Programas</h2>
+    <div class="programas-container">
+        <div class="programa">
+            <h3>Ingeniería de Sistemas</h3>
+            <p>Duración: 10 semestres</p>
+            <p>Modalidad: Presencial</p>
+        </div>
+        <div class="programa">
+            <h3>Psicología</h3>
+            <p>Duración: 10 semestres</p>
+            <p>Modalidad: Presencial</p>
+        </div>
+        <div class="programa">
+            <h3>Derecho</h3>
+            <p>Duración: 10 semestres</p>
+            <p>Modalidad: Presencial</p>
+        </div>
+    </div>
+</section>
+        
+    </div>
+    <script src="/JS/script.js"></script>
+</body>
+</html>
